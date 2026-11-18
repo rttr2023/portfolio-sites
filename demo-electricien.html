@@ -1,0 +1,673 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Électricien au Pontet et Grand Avignon | Morel Électricité</title>
+  <meta name="description" content="Électricien au Pontet : dépannage rapide, mise aux normes, rénovation électrique et tableau électrique. Devis gratuit, intervention dans tout le Grand Avignon.">
+  <meta name="robots" content="noindex">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --navy:#0d1b2a; --navy-2:#13263b; --ink:#1b2430; --muted:#5b6675;
+      --bg:#f6f7f9; --card:#ffffff; --line:#e3e7ec;
+      --volt:#ffc61a; --volt-dark:#e0a800; --ok:#1f9d55;
+      --radius:14px; --shadow:0 6px 24px rgba(13,27,42,.08);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6}
+    a{color:inherit}
+    img,svg{display:block}
+    .wrap{max-width:1120px;margin:0 auto;padding:0 20px}
+
+    /* Bandeau démo */
+    .demo{background:#222;color:#fff;font-size:.8rem;text-align:center;padding:6px 16px}
+
+    /* En-tête */
+    header{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;box-shadow:0 2px 12px rgba(0,0,0,.2)}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;height:68px}
+    .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;text-decoration:none;letter-spacing:.2px}
+    .logo-mark{width:36px;height:36px;border-radius:10px;background:var(--volt);display:grid;place-items:center}
+    .links{display:flex;gap:26px;list-style:none}
+    .links a{text-decoration:none;opacity:.85;font-size:.95rem}
+    .links a:hover{opacity:1;color:var(--volt)}
+    .btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:12px 22px;font-weight:700;font-size:1rem;text-decoration:none;cursor:pointer;transition:transform .15s,background .15s}
+    .btn:hover{transform:translateY(-1px)}
+    .btn-volt{background:var(--volt);color:var(--navy)}
+    .btn-volt:hover{background:var(--volt-dark)}
+    .btn-ghost{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.35)}
+    .btn-ghost:hover{border-color:#fff}
+
+    /* Hero */
+    /* Image d'accueil : déposer un rendu Blender dans img/hero.webp (1920x1080, moins de 300 Ko).
+       Sans le fichier, seul le dégradé s'affiche. */
+    .hero{background:linear-gradient(90deg,rgba(13,27,42,.97) 0%,rgba(13,27,42,.88) 38%,rgba(13,27,42,.25) 68%,rgba(13,27,42,0) 100%),url("img/hero.webp") right center/cover no-repeat,var(--navy);color:#fff;padding:72px 0 88px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+    .tag{display:inline-block;background:rgba(255,198,26,.15);color:var(--volt);border:1px solid rgba(255,198,26,.4);padding:6px 14px;border-radius:999px;font-size:.85rem;font-weight:600;margin-bottom:18px}
+    h1{font-size:clamp(2rem,4.6vw,3.2rem);line-height:1.12;margin-bottom:18px;letter-spacing:-.5px}
+    h1 span{color:var(--volt)}
+    .lead{font-size:1.12rem;opacity:.85;max-width:560px;margin-bottom:28px}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:30px}
+    .badges{display:flex;flex-wrap:wrap;gap:18px;font-size:.92rem;opacity:.9}
+    .badges div{display:flex;align-items:center;gap:8px}
+    /* Typographie des titres */
+    h1,h2,h3,.logo,.btn,.chip-float strong{font-family:"Sora",system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif}
+    h1{font-weight:800;letter-spacing:-1px}
+    h2{font-weight:700;letter-spacing:-.4px}
+
+    /* Illustration de l'accueil */
+    .hero-visual{position:relative;max-width:440px;margin-left:auto;width:100%;min-height:440px}
+    .chip-float{position:absolute;display:flex;align-items:center;gap:10px;background:#fff;color:var(--navy);border-radius:14px;padding:10px 14px;box-shadow:0 12px 30px rgba(0,0,0,.28);font-size:.82rem;line-height:1.25;animation:flotte 5s ease-in-out infinite}
+    .chip-float strong{display:block;font-size:1rem}
+    .chip-float .dot{width:34px;height:34px;border-radius:10px;background:#fff5d1;display:grid;place-items:center;flex:none}
+    .chip-float .dot .ic{width:18px;height:18px;color:var(--volt-dark)}
+    .chip-a{left:-10px;top:12%}
+    .chip-b{right:0;top:48%;animation-delay:-1.6s}
+    .chip-c{left:10px;bottom:8%;animation-delay:-3.2s}
+    @keyframes flotte{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}
+    .led{animation:clignote 2.4s ease-in-out infinite}
+    @keyframes clignote{0%,100%{opacity:1}50%{opacity:.35}}
+    @media (prefers-reduced-motion:reduce){.chip-float,.led{animation:none}}
+    .stat{display:flex;justify-content:space-between;align-items:baseline;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.1)}
+    .stat:last-child{border:0}
+    .stat strong{font-size:1.6rem;color:var(--volt)}
+    .stat span{opacity:.8;font-size:.92rem}
+
+    /* Sections */
+    section{padding:80px 0}
+    .head{text-align:center;max-width:680px;margin:0 auto 46px}
+    .kicker{color:var(--volt-dark);font-weight:700;font-size:.85rem;letter-spacing:1.5px;text-transform:uppercase}
+    h2{font-size:clamp(1.6rem,3.2vw,2.3rem);line-height:1.2;margin:8px 0 12px;color:var(--navy)}
+    .head p{color:var(--muted)}
+
+    .grid{display:grid;gap:20px}
+    .g3{grid-template-columns:repeat(3,1fr)}
+    .card{background:var(--card);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:transform .2s,box-shadow .2s}
+    .card:hover{transform:translateY(-3px);box-shadow:0 12px 32px rgba(13,27,42,.12)}
+    .icon{width:48px;height:48px;border-radius:12px;background:#fff5d1;display:grid;place-items:center;margin-bottom:16px}
+    .card h3{font-size:1.12rem;margin-bottom:8px;color:var(--navy)}
+    .card p{color:var(--muted);font-size:.96rem}
+
+    /* Urgence */
+    .urgent{background:var(--volt);padding:34px 0}
+    .urgent .wrap{display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap}
+    .urgent h2{margin:0;font-size:1.5rem}
+    .urgent p{color:var(--navy);opacity:.8}
+    .btn-navy{background:var(--navy);color:#fff}
+
+    /* Pourquoi */
+    .why{background:#fff}
+    .why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+    .why-item{text-align:center;padding:10px}
+    .why-item .num{font-size:2rem;font-weight:800;color:var(--navy)}
+    .why-item p{color:var(--muted);font-size:.95rem}
+
+    /* Réalisations */
+    .work{border-radius:var(--radius);overflow:hidden;background:var(--card);border:1px solid var(--line);box-shadow:var(--shadow)}
+    .work-visual{height:170px;overflow:hidden}
+    .work-visual{position:relative}
+    .work-visual img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+    .work:hover .work-visual img{transform:scale(1.04)}
+    .ba{position:absolute;bottom:10px;background:rgba(13,27,42,.85);color:#fff;font:700 .72rem/1 "Sora",Arial,sans-serif;letter-spacing:1px;padding:6px 9px;border-radius:6px}
+    .ba-l{left:10px}.ba-r{right:10px;background:var(--volt);color:var(--navy)}
+    .v1{background:linear-gradient(135deg,#1d3557,#457b9d)}
+    .v2{background:linear-gradient(135deg,#2b2d42,#8d99ae)}
+    .v3{background:linear-gradient(135deg,#3a2e1f,#b08d57)}
+    .work-body{padding:20px}
+    .work-body small{color:var(--volt-dark);font-weight:700;text-transform:uppercase;font-size:.75rem;letter-spacing:1px}
+    .work-body h3{margin:4px 0 6px;font-size:1.05rem;color:var(--navy)}
+    .work-body p{color:var(--muted);font-size:.93rem}
+
+    /* Avis */
+    .stars{color:var(--volt-dark);letter-spacing:2px;margin-bottom:10px}
+    .review p{font-style:italic;color:var(--ink)}
+    .review footer{margin-top:14px;font-size:.88rem;color:var(--muted)}
+
+    /* Zone */
+    .zone{background:#fff}
+    .zone-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:center}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .chip{background:var(--bg);border:1px solid var(--line);padding:8px 14px;border-radius:999px;font-size:.92rem}
+    .map{aspect-ratio:4/3;border-radius:var(--radius);background:#e9eef3;border:1px solid var(--line);position:relative;overflow:hidden;box-shadow:var(--shadow)}
+    #carte{position:absolute;inset:0;z-index:0}
+    .leaflet-tooltip.pin-label{background:var(--navy);color:#fff;border:0;border-radius:999px;padding:6px 12px;font-weight:700;font-size:.85rem;box-shadow:0 4px 14px rgba(0,0,0,.25)}
+    .leaflet-tooltip.pin-label::before{border-top-color:var(--navy)}
+    .map-link{display:inline-block;margin-top:10px;font-size:.85rem;color:var(--muted)}
+
+    /* FAQ */
+    details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px 22px;margin-bottom:12px}
+    summary{cursor:pointer;font-weight:700;color:var(--navy);list-style:none;display:flex;justify-content:space-between;gap:12px}
+    summary::after{content:"+";font-size:1.3rem;line-height:1;color:var(--volt-dark)}
+    details[open] summary::after{content:"–"}
+    details p{margin-top:10px;color:var(--muted)}
+    .faq{max-width:780px;margin:0 auto}
+
+    /* Contact */
+    .contact{background:linear-gradient(160deg,var(--navy),var(--navy-2));color:#fff}
+    .contact .head h2{color:#fff}
+    .contact .head p{color:rgba(255,255,255,.75)}
+    .contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px}
+    .info-line{display:flex;gap:14px;align-items:flex-start;margin-bottom:22px}
+    .info-line strong{display:block}
+    .info-line span{opacity:.75;font-size:.95rem}
+    form{background:#fff;color:var(--ink);border-radius:18px;padding:28px;display:grid;gap:14px}
+    .row{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+    label{font-size:.85rem;font-weight:600;color:var(--navy)}
+    input,select,textarea{width:100%;margin-top:6px;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font:inherit;background:var(--bg)}
+    input:focus,select:focus,textarea:focus{outline:2px solid var(--volt);border-color:transparent}
+    .form-msg{display:none;background:#e8f7ee;color:var(--ok);padding:12px;border-radius:10px;font-weight:600}
+
+    .ic{width:18px;height:18px;flex:none;display:inline-block;vertical-align:-3px}
+    .tag .ic{width:15px;height:15px;color:var(--volt);margin-right:4px;vertical-align:-2px}
+    .ic-check{color:var(--volt);width:20px;height:20px}
+    .info-ic{width:44px;height:44px;flex:none;border-radius:12px;background:rgba(255,198,26,.14);color:var(--volt);display:grid;place-items:center}
+    .info-ic .ic{width:22px;height:22px}
+    /* Prise de rendez-vous */
+    .rdv{background:#fff}
+    .rdv-box{max-width:860px;margin:0 auto;background:var(--bg);border:1px solid var(--line);border-radius:20px;padding:28px;box-shadow:var(--shadow)}
+    .rdv-step{margin-bottom:22px}
+    .rdv-step h3{font-size:1rem;color:var(--navy);margin-bottom:12px;display:flex;align-items:center;gap:10px}
+    .rdv-step h3 .n{width:26px;height:26px;border-radius:50%;background:var(--navy);color:var(--volt);display:grid;place-items:center;font-size:.8rem;flex:none}
+    .opts{display:flex;flex-wrap:wrap;gap:10px}
+    .opt{border:1px solid var(--line);background:#fff;border-radius:12px;padding:10px 14px;cursor:pointer;font:inherit;font-size:.92rem;color:var(--ink);text-align:left;transition:border-color .15s,background .15s}
+    .opt small{display:block;color:var(--muted);font-size:.78rem}
+    .opt:hover{border-color:var(--volt-dark)}
+    .opt[aria-pressed="true"]{background:var(--navy);border-color:var(--navy);color:#fff}
+    .opt[aria-pressed="true"] small{color:var(--volt)}
+    .opt:disabled{opacity:.35;cursor:not-allowed}
+    .days{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+    .day{padding:10px 4px;text-align:center}
+    .day b{display:block;font-family:"Sora",Arial,sans-serif;font-size:1.05rem}
+    .slots{display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px}
+    .slot{text-align:center}
+    .rdv-recap{display:none;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;background:var(--navy);color:#fff;border-radius:14px;padding:16px 20px}
+    .rdv-recap.show{display:flex}
+    .rdv-recap strong{color:var(--volt)}
+    .rdv-ok{display:none;text-align:center;padding:26px 10px}
+    .rdv-ok.show{display:block}
+    .rdv-ok .big{width:56px;height:56px;border-radius:50%;background:#e8f7ee;color:var(--ok);display:grid;place-items:center;margin:0 auto 12px;font-size:1.6rem}
+    .rdv-fields{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px}
+    .rdv-fields label{font-size:.85rem;font-weight:600;color:var(--navy)}
+    .rdv-fields input{width:100%;margin-top:6px;padding:11px 13px;border:1px solid var(--line);border-radius:10px;font:inherit;background:#fff}
+    .rdv-fields input:focus{outline:2px solid var(--volt);border-color:transparent}
+    .rdv-fields input.err{border-color:#d64545;background:#fff5f5}
+    .rdv-err{display:none;color:#d64545;font-size:.85rem;margin-top:8px}
+    .rdv-err.show{display:block}
+    .mail{max-width:520px;margin:18px auto 0;text-align:left;background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;box-shadow:var(--shadow)}
+    .mail-head{background:var(--bg);padding:12px 16px;font-size:.82rem;color:var(--muted);border-bottom:1px solid var(--line)}
+    .mail-head b{color:var(--ink)}
+    .mail-body{padding:18px 16px;font-size:.92rem;color:var(--ink)}
+    .mail-body .bar{height:4px;background:var(--volt);border-radius:2px;margin-bottom:14px;width:60px}
+    .mail-body table{width:100%;border-collapse:collapse;margin:12px 0}
+    .mail-body td{padding:6px 0;border-bottom:1px dashed var(--line)}
+    .mail-body td:first-child{color:var(--muted);width:40%}
+    @media (max-width:600px){.rdv-fields{grid-template-columns:1fr}}
+    @media (max-width:600px){.days{grid-template-columns:repeat(4,1fr)}.rdv-box{padding:18px}}
+    footer.site{background:#08121c;color:rgba(255,255,255,.65);padding:30px 0;font-size:.88rem}
+    footer.site .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+    /* Bouton d'appel mobile */
+    .call-float{display:none;position:fixed;left:16px;right:16px;bottom:16px;z-index:60;justify-content:center;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+
+    @media (max-width:900px){
+      .hero-grid,.zone-grid,.contact-grid{grid-template-columns:1fr}
+      .g3{grid-template-columns:1fr 1fr}
+      .why-grid{grid-template-columns:1fr 1fr}
+      .links{display:none}
+      .hero{background:linear-gradient(rgba(13,27,42,.86),rgba(13,27,42,.86)),url("img/hero.webp") 75% center/cover no-repeat,var(--navy)}
+      .hero-visual{display:none}
+    }
+    @media (max-width:600px){
+      .g3,.row{grid-template-columns:1fr}
+      section{padding:60px 0}
+      .hero{padding:48px 0 64px}
+      .nav .btn{display:none}
+      .call-float{display:flex}
+      .chip-a{left:0}.chip-b{right:0}.chip-c{left:0}
+      .hero-visual{margin:8px auto 0}
+      body{padding-bottom:84px}
+    }
+  </style>
+
+  <!-- Données structurées pour Google (fiche entreprise locale) -->
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"Electrician",
+    "name":"Morel Électricité",
+    "description":"Électricien au Pontet : dépannage, mise aux normes, rénovation, tableau électrique.",
+    "telephone":"+33400000000",
+    "address":{"@type":"PostalAddress","addressLocality":"Le Pontet","postalCode":"84130","addressCountry":"FR"},
+    "areaServed":["Le Pontet","Avignon","Sorgues","Vedène","Entraigues-sur-la-Sorgue","Morières-lès-Avignon","Villeneuve-lès-Avignon","Le Thor"],
+    "openingHours":"Mo-Fr 07:30-18:30, Sa 08:00-12:00"
+  }
+  </script>
+</head>
+<body>
+<svg xmlns="http://www.w3.org/2000/svg" style="display:none" aria-hidden="true">
+  <symbol id="i-phone" viewBox="0 0 24 24"><path fill="currentColor" d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10" fill="currentColor"/><path d="m7.5 12.5 3 3 6-6.5" fill="none" stroke="#0d1b2a" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-bolt" viewBox="0 0 24 24"><path fill="currentColor" d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m3.5 6.5 8.5 6.5 8.5-6.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 22s7-6.2 7-12a7 7 0 1 0-14 0c0 5.8 7 12 7 12z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="2.6" fill="currentColor"/></symbol>
+</svg>
+
+<div class="demo">Site de démonstration : entreprise, coordonnées et avis fictifs.</div>
+
+<header>
+  <div class="wrap nav">
+    <a href="#" class="logo" aria-label="Morel Électricité, accueil">
+      <span class="logo-mark" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#0d1b2a"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg>
+      </span>
+      Morel Électricité
+    </a>
+    <ul class="links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#realisations">Réalisations</a></li>
+      <li><a href="#zone">Zone</a></li>
+      <li><a href="#avis">Avis</a></li>
+      <li><a href="#rdv">Rendez-vous</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a href="tel:+33400000000" class="btn btn-volt">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>
+      04 00 00 00 00
+    </a>
+  </div>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tag"><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg> Électricien au Pontet et dans le Grand Avignon</span>
+        <h1>Votre électricité <span>en sécurité</span>, sans mauvaise surprise.</h1>
+        <p class="lead">Dépannage, mise aux normes, rénovation et tableau électrique pour les particuliers et les professionnels. Devis gratuit, prix annoncé avant l'intervention.</p>
+        <div class="cta-row">
+          <a href="tel:+33400000000" class="btn btn-volt"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg> Appeler maintenant</a>
+          <a href="#contact" class="btn btn-ghost">Demander un devis gratuit</a>
+        </div>
+        <div class="badges">
+          <div><svg class="ic ic-check" aria-hidden="true"><use href="#i-check"/></svg> Habilitation électrique à jour</div>
+          <div><svg class="ic ic-check" aria-hidden="true"><use href="#i-check"/></svg> Travaux selon la norme NF C 15-100</div>
+          <div><svg class="ic ic-check" aria-hidden="true"><use href="#i-check"/></svg> Assurance décennale</div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="chip-float chip-a"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-bolt"/></svg></span><span><strong>&lt; 2 h</strong>pour un dépannage</span></div>
+        <div class="chip-float chip-b"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-check"/></svg></span><span><strong>4,9/5</strong>avis clients</span></div>
+        <div class="chip-float chip-c"><span class="dot"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span><span><strong>Devis gratuit</strong>12 ans d'expérience</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section id="services">
+    <div class="wrap">
+      <div class="head">
+        <span class="kicker">Nos services</span>
+        <h2>Tout votre électrique, du dépannage à la rénovation</h2>
+        <p>Un seul interlocuteur pour votre maison, votre appartement ou votre local professionnel.</p>
+      </div>
+      <div class="grid g3">
+        <article class="card">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2"><path d="M13 2 4 14h7l-1 8 9-12h-7l1-8z"/></svg></div>
+          <h3>Dépannage électrique</h3>
+          <p>Panne de courant, disjoncteur qui saute, prise qui chauffe : intervention rapide, 6 jours sur 7.</p>
+        </article>
+        <article class="card">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg></div>
+          <h3>Tableau électrique</h3>
+          <p>Remplacement ou mise à niveau du tableau, ajout de différentiels 30 mA, repérage clair des circuits.</p>
+        </article>
+        <article class="card">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2"><path d="M12 3 3 8v8l9 5 9-5V8z"/><path d="m9 12 2 2 4-4"/></svg></div>
+          <h3>Mise aux normes</h3>
+          <p>Diagnostic et mise en conformité NF C 15-100, avant une vente, une location ou après un diagnostic.</p>
+        </article>
+        <article class="card">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2"><path d="M3 11 12 4l9 7v9H3z"/><path d="M9 20v-6h6v6"/></svg></div>
+          <h3>Rénovation complète</h3>
+          <p>Rénovation de l'installation, d'une pièce à la maison entière, en travaillant proprement et dans les délais annoncés.</p>
+        </article>
+        <article class="card">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2"><circle cx="12" cy="10" r="5"/><path d="M10 18h4M10.5 21h3"/></svg></div>
+          <h3>Éclairage</h3>
+          <p>Spots LED, éclairage extérieur, détecteurs de présence : plus de confort et une facture qui baisse.</p>
+        </article>
+        <article class="card">
+          <div class="icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0d1b2a" stroke-width="2"><rect x="5" y="2" width="14" height="20" rx="3"/><path d="M12 18h.01"/></svg></div>
+          <h3>Domotique</h3>
+          <p>Volets roulants, chauffage, éclairage pilotés depuis le téléphone : on vous conseille sans surcoût inutile.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- URGENCE -->
+  <div class="urgent">
+    <div class="wrap">
+      <div>
+        <h2>Une panne ? On intervient vite.</h2>
+        <p>Du lundi au samedi, au Pontet et dans les communes alentour.</p>
+      </div>
+      <a href="tel:+33400000000" class="btn btn-navy"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg> 04 00 00 00 00</a>
+    </div>
+  </div>
+
+  <!-- POURQUOI -->
+  <section class="why">
+    <div class="wrap">
+      <div class="head">
+        <span class="kicker">Pourquoi nous</span>
+        <h2>Un électricien qui répond, vient et explique</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item"><div class="num">01</div><p><strong>Prix annoncé avant les travaux</strong>, sans ajout surprise sur la facture.</p></div>
+        <div class="why-item"><div class="num">02</div><p><strong>Chantier propre</strong> : protection des sols, gravats repris.</p></div>
+        <div class="why-item"><div class="num">03</div><p><strong>Travail aux normes</strong>, et attestation fournie si besoin.</p></div>
+        <div class="why-item"><div class="num">04</div><p><strong>Un interlocuteur unique</strong>, du devis à la fin du chantier.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RÉALISATIONS -->
+  <section id="realisations">
+    <div class="wrap">
+      <div class="head">
+        <span class="kicker">Réalisations</span>
+        <h2>Quelques chantiers récents</h2>
+        <p>Des chantiers propres, livrés dans les délais annoncés.</p>
+      </div>
+      <div class="grid g3">
+        <article class="work">
+          <div class="work-visual v1"><img src="img/avant-apres.webp" alt="Tableau électrique avant et après rénovation" loading="lazy" width="1200" height="600"><span class="ba ba-l">AVANT</span><span class="ba ba-r">APRÈS</span></div>
+          <div class="work-body"><small>Avignon · Maison</small><h3>Remplacement du tableau électrique</h3><p>Ancien tableau à fusibles remplacé par un tableau aux normes, avec 3 interrupteurs différentiels.</p></div>
+        </article>
+        <article class="work">
+          <div class="work-visual v2"><img src="img/salon.webp" alt="Salon éclairé par des spots LED encastrés" loading="lazy" width="1200" height="600"></div>
+          <div class="work-body"><small>Le Pontet · Appartement</small><h3>Rénovation complète en 5 jours</h3><p>Reprise de tout le câblage, prises supplémentaires dans la cuisine, éclairage LED encastré.</p></div>
+        </article>
+        <article class="work">
+          <div class="work-visual v3"><img src="img/boutique.webp" alt="Boutique éclairée par des rails de spots LED" loading="lazy" width="1200" height="600"></div>
+          <div class="work-body"><small>Sorgues · Commerce</small><h3>Éclairage d'une boutique</h3><p>Rails LED orientables et éclairage de vitrine programmable : 40 % de consommation en moins.</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS -->
+  <section id="avis" class="why">
+    <div class="wrap">
+      <div class="head">
+        <span class="kicker">Avis clients</span>
+        <h2>Ils nous ont fait confiance</h2>
+      </div>
+      <div class="grid g3">
+        <blockquote class="card review"><div class="stars" aria-label="5 étoiles sur 5">★★★★★</div><p>« Disjoncteur qui sautait tous les soirs. Il est venu le jour même, a trouvé la prise en cause et m'a tout expliqué. Prix conforme au devis. »</p><footer>Client fictif · Le Pontet</footer></blockquote>
+        <blockquote class="card review"><div class="stars" aria-label="5 étoiles sur 5">★★★★★</div><p>« Mise aux normes avant la vente de notre maison. Travail propre, délai tenu, et l'attestation fournie pour le notaire. »</p><footer>Client fictif · Vedène</footer></blockquote>
+        <blockquote class="card review"><div class="stars" aria-label="5 étoiles sur 5">★★★★★</div><p>« Très bon conseil sur l'éclairage de notre boutique. Le rendu est top et la facture d'électricité a baissé. »</p><footer>Client fictif · Sorgues</footer></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- ZONE -->
+  <section id="zone" class="zone">
+    <div class="wrap zone-grid">
+      <div>
+        <span class="kicker">Zone d'intervention</span>
+        <h2>Au Pontet et dans un rayon de 25 km</h2>
+        <p style="color:var(--muted)">Intervention rapide dans tout le Grand Avignon. Votre commune n'est pas dans la liste ? Appelez-nous, on trouve une solution.</p>
+        <div class="chips">
+          <span class="chip">Le Pontet</span><span class="chip">Avignon</span><span class="chip">Sorgues</span><span class="chip">Vedène</span><span class="chip">Entraigues-sur-la-Sorgue</span><span class="chip">Morières-lès-Avignon</span><span class="chip">Villeneuve-lès-Avignon</span><span class="chip">Le Thor</span><span class="chip">Châteauneuf-du-Pape</span>
+        </div>
+      </div>
+      <div>
+        <div class="map">
+          <div id="carte" role="region" aria-label="Carte de la zone d'intervention : 25 km autour du Pontet"></div>
+        </div>
+        <a class="map-link" href="https://www.openstreetmap.org/?mlat=43.9617&amp;mlon=4.8606#map=12/43.9617/4.8606" target="_blank" rel="noopener">Agrandir la carte</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="head">
+        <span class="kicker">Questions fréquentes</span>
+        <h2>Vous vous demandez peut-être…</h2>
+      </div>
+      <div class="faq">
+        <details><summary>Le devis est-il vraiment gratuit ?</summary><p>Oui. Nous nous déplaçons, nous regardons l'installation et nous vous remettons un devis détaillé, sans engagement.</p></details>
+        <details><summary>En combien de temps pouvez-vous intervenir pour une panne ?</summary><p>En général dans la journée, souvent en moins de 2 heures au Pontet et à Avignon, selon notre planning.</p></details>
+        <details><summary>Comment savoir si mon installation est aux normes ?</summary><p>Un tableau à fusibles, l'absence de prise de terre ou de différentiel 30 mA sont des signes d'alerte. Nous faisons un diagnostic et nous vous expliquons les priorités.</p></details>
+        <details><summary>Intervenez-vous pour les professionnels ?</summary><p>Oui : commerces, bureaux et locaux d'activité, avec des horaires adaptés pour ne pas gêner votre activité.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRISE DE RENDEZ-VOUS -->
+  <section id="rdv" class="rdv">
+    <div class="wrap">
+      <div class="head">
+        <span class="kicker">Rendez-vous en ligne</span>
+        <h2>Réservez votre créneau en 30 secondes</h2>
+        <p>Choisissez le type d'intervention, le jour et l'heure. Vous recevez une confirmation, sans attendre au téléphone.</p>
+      </div>
+      <div class="rdv-box" id="rdvBox">
+        <div id="rdvForm">
+          <div class="rdv-step">
+            <h3><span class="n">1</span>Type d'intervention</h3>
+            <div class="opts" id="types">
+              <button type="button" class="opt" data-type="Devis gratuit" data-duree="45 min">Devis gratuit<small>45 min, sur place</small></button>
+              <button type="button" class="opt" data-type="Dépannage" data-duree="1 h">Dépannage<small>1 h, intervention rapide</small></button>
+              <button type="button" class="opt" data-type="Diagnostic mise aux normes" data-duree="1 h 30">Diagnostic normes<small>1 h 30, rapport remis</small></button>
+            </div>
+          </div>
+          <div class="rdv-step">
+            <h3><span class="n">2</span>Jour</h3>
+            <div class="days" id="days"></div>
+          </div>
+          <div class="rdv-step">
+            <h3><span class="n">3</span>Créneau</h3>
+            <div class="slots" id="slots"><p style="color:var(--muted);font-size:.92rem">Choisissez d'abord un jour.</p></div>
+          </div>
+          <div class="rdv-step">
+            <h3><span class="n">4</span>Vos coordonnées</h3>
+            <div class="rdv-fields">
+              <label>Nom<input id="rdvNom" autocomplete="name" placeholder="Jean Dupont"></label>
+              <label>Téléphone<input id="rdvTel" type="tel" autocomplete="tel" placeholder="06 12 34 56 78"></label>
+              <label>E-mail<input id="rdvMail" type="email" autocomplete="email" placeholder="vous@exemple.fr"></label>
+            </div>
+            <p class="rdv-err" id="rdvErr" role="alert"></p>
+          </div>
+          <div class="rdv-recap" id="recap">
+            <span id="recapTxt"></span>
+            <button type="button" class="btn btn-volt" id="confirm">Confirmer le rendez-vous</button>
+          </div>
+        </div>
+        <div class="rdv-ok" id="rdvOk" role="status">
+          <div class="big">✓</div>
+          <h3 style="color:var(--navy);margin-bottom:6px">Rendez-vous réservé</h3>
+          <p style="color:var(--muted)" id="okTxt"></p>
+          <div class="mail" aria-label="Aperçu de l'e-mail de confirmation">
+            <div class="mail-head">De : <b>Morel Électricité</b> &lt;rdv@exemple.fr&gt;<br>À : <b id="mailTo"></b><br>Objet : <b>Votre rendez-vous est confirmé</b></div>
+            <div class="mail-body">
+              <div class="bar"></div>
+              <p>Bonjour <span id="mailNom"></span>,</p>
+              <p style="margin-top:8px">Votre rendez-vous est bien enregistré :</p>
+              <table>
+                <tr><td>Intervention</td><td id="mailType"></td></tr>
+                <tr><td>Date</td><td id="mailDate"></td></tr>
+                <tr><td>Durée estimée</td><td id="mailDuree"></td></tr>
+                <tr><td>Adresse</td><td>À votre domicile (nous vous rappelons pour la confirmer)</td></tr>
+              </table>
+              <p>Un empêchement ? Appelez-nous au 04 00 00 00 00.</p>
+              <p style="margin-top:8px">À bientôt,<br>Morel Électricité</p>
+            </div>
+          </div>
+          <p style="color:var(--muted);font-size:.85rem;margin-top:14px">Démo : aucun e-mail n'est réellement envoyé. Dans la version réelle, le client reçoit ce mail et l'artisan est prévenu en même temps.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="head">
+        <span class="kicker">Contact</span>
+        <h2>Demandez votre devis gratuit</h2>
+        <p>Réponse sous 24 h. Pour une urgence, appelez directement.</p>
+      </div>
+      <div class="contact-grid">
+        <div>
+          <div class="info-line"><span class="info-ic"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg></span><div><strong>04 00 00 00 00</strong><span>Lundi au vendredi 7h30-18h30, samedi 8h-12h</span></div></div>
+          <div class="info-line"><span class="info-ic"><svg class="ic" aria-hidden="true"><use href="#i-mail"/></svg></span><div><strong>contact@exemple.fr</strong><span>Joignez une photo de votre tableau si possible</span></div></div>
+          <div class="info-line"><span class="info-ic"><svg class="ic" aria-hidden="true"><use href="#i-pin"/></svg></span><div><strong>Le Pontet (84130)</strong><span>Grand Avignon et 25 km autour</span></div></div>
+        </div>
+        <form id="devis" novalidate>
+          <div class="row">
+            <label>Nom<input name="nom" autocomplete="name" required></label>
+            <label>Téléphone<input name="tel" type="tel" autocomplete="tel" required></label>
+          </div>
+          <div class="row">
+            <label>Commune<input name="ville" autocomplete="address-level2"></label>
+            <label>Type de besoin
+              <select name="besoin">
+                <option>Dépannage</option><option>Tableau électrique</option><option>Mise aux normes</option><option>Rénovation</option><option>Éclairage / domotique</option><option>Autre</option>
+              </select>
+            </label>
+          </div>
+          <label>Votre message<textarea name="message" rows="4" placeholder="Décrivez votre besoin en quelques mots"></textarea></label>
+          <button class="btn btn-volt" type="submit">Envoyer ma demande</button>
+          <div class="form-msg" id="msg" role="status">Démo : dans la version réelle, cette demande arrive directement par mail à l'artisan.</div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <span>© Morel Électricité, entreprise fictive. Site de démonstration.</span>
+    <span><a href="mentions-legales.html">Mentions légales et confidentialité</a></span>
+  </div>
+</footer>
+
+<a href="tel:+33400000000" class="btn btn-volt call-float"><svg class="ic" aria-hidden="true"><use href="#i-phone"/></svg> Appeler l'électricien</a>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+<script>
+  // Carte de la zone d'intervention : cercle géographique de 25 km autour du Pontet
+  (function () {
+    if (!window.L) return; // pas de connexion : la carte ne s'affiche pas, le reste du site fonctionne
+    var centre = [43.9617, 4.8606];
+    var carte = L.map('carte', { scrollWheelZoom: false }).setView(centre, 10);
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      maxZoom: 18,
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(carte);
+    var zone = L.circle(centre, {
+      radius: 25000,
+      color: '#e0a800', weight: 2, dashArray: '6 6',
+      fillColor: '#ffc61a', fillOpacity: 0.15
+    }).addTo(carte);
+    L.marker(centre).addTo(carte)
+      .bindTooltip('Le Pontet · rayon de 25 km', { permanent: true, direction: 'top', offset: [0, -36], className: 'pin-label' });
+    carte.fitBounds(zone.getBounds(), { padding: [10, 10] });
+    carte.on('click', function () { carte.scrollWheelZoom.enable(); });
+  })();
+
+
+  // Prise de rendez-vous (démo)
+  (function () {
+    var jours = ['dim.','lun.','mar.','mer.','jeu.','ven.','sam.'];
+    var mois = ['janv.','févr.','mars','avr.','mai','juin','juil.','août','sept.','oct.','nov.','déc.'];
+    var choix = {};
+    var $ = function (id) { return document.getElementById(id); };
+    function presser(groupe, el) {
+      groupe.querySelectorAll('.opt').forEach(function (b) { b.setAttribute('aria-pressed', 'false'); });
+      el.setAttribute('aria-pressed', 'true');
+    }
+    function recap() {
+      if (choix.type && choix.jour && choix.heure) {
+        $('recapTxt').innerHTML = '<strong>' + choix.type + '</strong> · ' + choix.jourTxt + ' à ' + choix.heure + ' (' + choix.duree + ')';
+        $('recap').classList.add('show');
+      } else { $('recap').classList.remove('show'); }
+    }
+    // Pseudo-aléatoire stable : certains créneaux apparaissent déjà pris
+    function pris(date, h) { var n = date.getDate() * 31 + h.charCodeAt(0) * 7 + h.charCodeAt(1); return n % 5 === 0; }
+    $('types').addEventListener('click', function (e) {
+      var b = e.target.closest('.opt'); if (!b) return;
+      presser($('types'), b); choix.type = b.dataset.type; choix.duree = b.dataset.duree; recap();
+    });
+    var d = new Date(); d.setHours(0, 0, 0, 0); var n = 0;
+    while (n < 7) {
+      d.setDate(d.getDate() + 1);
+      if (d.getDay() === 0) continue; // fermé le dimanche
+      var b = document.createElement('button');
+      b.type = 'button'; b.className = 'opt day';
+      b.innerHTML = jours[d.getDay()] + '<b>' + d.getDate() + '</b><small>' + mois[d.getMonth()] + '</small>';
+      b.dataset.iso = d.toISOString(); b.dataset.txt = jours[d.getDay()] + ' ' + d.getDate() + ' ' + mois[d.getMonth()];
+      $('days').appendChild(b); n++;
+    }
+    $('days').addEventListener('click', function (e) {
+      var b = e.target.closest('.opt'); if (!b) return;
+      presser($('days'), b); choix.jour = b.dataset.iso; choix.jourTxt = b.dataset.txt; choix.heure = null;
+      var date = new Date(b.dataset.iso), sam = date.getDay() === 6;
+      var heures = sam ? ['08:30','09:30','10:30','11:30'] : ['08:00','09:00','10:30','11:30','14:00','15:00','16:30','17:30'];
+      $('slots').innerHTML = '';
+      heures.forEach(function (h) {
+        var s = document.createElement('button');
+        s.type = 'button'; s.className = 'opt slot'; s.textContent = h; s.dataset.h = h;
+        if (pris(date, h)) { s.disabled = true; s.title = 'Créneau déjà réservé'; }
+        $('slots').appendChild(s);
+      });
+      recap();
+    });
+    $('slots').addEventListener('click', function (e) {
+      var b = e.target.closest('.opt'); if (!b || b.disabled) return;
+      presser($('slots'), b); choix.heure = b.dataset.h; recap();
+    });
+    // --- Envoi réel (optionnel) : renseigner ces 3 identifiants EmailJS pour envoyer un vrai mail ---
+    var EMAILJS = { publicKey: '', serviceId: '', templateId: '' };
+
+    $('confirm').addEventListener('click', function () {
+      var nom = $('rdvNom').value.trim(), tel = $('rdvTel').value.replace(/\s/g, ''), mail = $('rdvMail').value.trim();
+      var erreurs = [];
+      [['rdvNom', nom.length >= 2, 'votre nom'],
+       ['rdvTel', /^0[1-9]\d{8}$/.test(tel), 'un téléphone valide (10 chiffres)'],
+       ['rdvMail', /^[^@\s]+@[^@\s]+\.[^@\s]{2,}$/.test(mail), 'un e-mail valide']].forEach(function (c) {
+        $(c[0]).classList.toggle('err', !c[1]); if (!c[1]) erreurs.push(c[2]);
+      });
+      if (erreurs.length) { $('rdvErr').textContent = "Merci d'indiquer " + erreurs.join(', ') + '.'; $('rdvErr').classList.add('show'); return; }
+      $('rdvErr').classList.remove('show');
+
+      var params = { nom: nom, telephone: tel, email: mail, intervention: choix.type, date: choix.jourTxt + ' à ' + choix.heure, duree: choix.duree };
+      if (EMAILJS.publicKey && window.emailjs) {
+        emailjs.send(EMAILJS.serviceId, EMAILJS.templateId, params, { publicKey: EMAILJS.publicKey });
+      }
+
+      $('okTxt').textContent = choix.type + ' le ' + choix.jourTxt + ' à ' + choix.heure + '. Un e-mail de confirmation a été envoyé à ' + mail + '.';
+      $('mailTo').textContent = mail; $('mailNom').textContent = nom;
+      $('mailType').textContent = choix.type; $('mailDate').textContent = choix.jourTxt + ' à ' + choix.heure; $('mailDuree').textContent = choix.duree;
+      $('rdvForm').style.display = 'none'; $('rdvOk').classList.add('show');
+    });
+  })();
+
+  document.getElementById('devis').addEventListener('submit', function (e) {
+    e.preventDefault();
+    document.getElementById('msg').style.display = 'block';
+    this.querySelector('button').disabled = true;
+  });
+</script>
+</body>
+</html>

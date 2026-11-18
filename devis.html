@@ -234,7 +234,7 @@
 <script>
 (function(){
   /* ========= CONFIGURATION ========= */
-  var EMAILJS = { publicKey: '', serviceId: '', templateId: '' };
+  var EMAILJS = { publicKey: 'R9SrA45__gsVdcJg-', serviceId: 'service_vmqm36b', templateId: 'template_wt1wsuk' };
   var PRESTATAIRE = {
     nom: 'Romain SALLES EI', adresse: '15 rue Coupo Santo, 84130 Le Pontet',
     tel: '06 04 71 27 75', email: 'sallesromain.pro@gmail.com', siret: "en cours d'attribution"
@@ -404,7 +404,7 @@
 
     $('send').disabled = true; $('send').textContent = 'Envoi en cours…';
     emailjs.init({ publicKey: EMAILJS.publicKey });
-    var base = { numero: num, entreprise: c.entreprise, client_nom: c.dirigeant, client_email: c.email, client_tel: c.tel, formule: d.nomFormule, total_commande: eur(d.unique), mensualite: eur(d.mens), anticipe: $('anticipe').checked ? 'OUI' : 'non', details: txt, signature: sigUrl, reply_to: c.email };
+    var base = { numero: num, entreprise: c.entreprise, client_nom: c.dirigeant, client_email: c.email, client_tel: c.tel, formule: d.nomFormule, total_commande: eur(d.unique), mensualite: eur(d.mens), anticipe: $('anticipe').checked ? 'OUI' : 'non', details: txt, reply_to: c.email };
     var aRomain = Object.assign({}, base, { to_email: PRESTATAIRE.email, to_name: 'Romain' });
     var aClient = Object.assign({}, base, { to_email: c.email, to_name: c.dirigeant, reply_to: PRESTATAIRE.email });
     emailjs.send(EMAILJS.serviceId, EMAILJS.templateId, aRomain)

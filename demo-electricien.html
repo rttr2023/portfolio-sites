@@ -34,6 +34,7 @@
     .links{display:flex;gap:26px;list-style:none}
     .links a{text-decoration:none;opacity:.85;font-size:.95rem}
     .links a:hover{opacity:1;color:var(--volt)}
+    .burger{display:none;background:none;border:0;color:#fff;padding:8px;margin-right:-8px;cursor:pointer}
     .btn{display:inline-flex;align-items:center;gap:8px;border:0;border-radius:999px;padding:12px 22px;font-weight:700;font-size:1rem;text-decoration:none;cursor:pointer;transition:transform .15s,background .15s}
     .btn:hover{transform:translateY(-1px)}
     .btn-volt{background:var(--volt);color:var(--navy)}
@@ -216,7 +217,10 @@
       .hero-grid,.zone-grid,.contact-grid{grid-template-columns:1fr}
       .g3{grid-template-columns:1fr 1fr}
       .why-grid{grid-template-columns:1fr 1fr}
-      .links{display:none}
+      .burger{display:block}
+      .links{display:none;position:absolute;top:68px;left:0;right:0;flex-direction:column;gap:0;background:var(--navy);border-top:1px solid rgba(255,255,255,.1);box-shadow:0 12px 24px rgba(0,0,0,.25)}
+      .links.open{display:flex}
+      .links a{display:block;padding:15px 20px;font-size:1.05rem;opacity:1;border-bottom:1px solid rgba(255,255,255,.06)}
       .hero{background:linear-gradient(rgba(13,27,42,.86),rgba(13,27,42,.86)),url("img/hero.webp") 75% center/cover no-repeat,var(--navy)}
       .hero-visual{display:none}
     }
@@ -265,7 +269,10 @@
       </span>
       Morel Électricité
     </a>
-    <ul class="links">
+    <button class="burger" id="burger" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="menu">
+      <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path id="burgerIco" d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul class="links" id="menu">
       <li><a href="#services">Services</a></li>
       <li><a href="#realisations">Réalisations</a></li>
       <li><a href="#zone">Zone</a></li>
@@ -566,6 +573,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
 <script>
+  // Menu mobile
+  (function(){
+    var b=document.getElementById('burger'), m=document.getElementById('menu'), ico=document.getElementById('burgerIco');
+    function set(o){ m.classList.toggle('open',o); b.setAttribute('aria-expanded',o); b.setAttribute('aria-label',o?'Fermer le menu':'Ouvrir le menu'); ico.setAttribute('d',o?'M6 6l12 12M18 6 6 18':'M4 7h16M4 12h16M4 17h16'); }
+    b.addEventListener('click',function(){ set(!m.classList.contains('open')); });
+    m.addEventListener('click',function(e){ if(e.target.tagName==='A') set(false); });
+  })();
+
   // Carte de la zone d'intervention : cercle géographique de 25 km autour du Pontet
   (function () {
     if (!window.L) return; // pas de connexion : la carte ne s'affiche pas, le reste du site fonctionne
